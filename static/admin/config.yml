@@ -34,7 +34,6 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      
       - file: "src/pages/index.md"
         label: "Landing Page"
         name: "index"
@@ -53,7 +52,7 @@ collections:
         label: "Services"
         name: "services"
         fields: 
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "services-page"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "llamma"}
           - {label:  "Title", name: title, widget: string }
           
       - file: "src/pages/about/index.md"

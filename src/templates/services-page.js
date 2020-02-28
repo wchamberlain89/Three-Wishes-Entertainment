@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 
-const SERVICES_PAGE_QUERY = graphql`
+export const SERVICES_PAGE_QUERY = graphql`
   query SERVICES_PAGE_QUERY($id: String!) {
     markdownRemark(id: { eq: $id } ) {
       frontmatter {
@@ -19,7 +19,6 @@ const ServicesPageTemplate = ({
 }) => (
   <div>
     <h1>{title}</h1>
-    ))}
   </div>
 )
 
