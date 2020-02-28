@@ -1,5 +1,5 @@
 ---
-title: sdfdadsfa
+title: This is my new title v2.0
 packages:
   - button:
       href: contact
