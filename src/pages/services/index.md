@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 path: /about
-title: This is my new title v3.0
+title: This is my new title v3.1
 packages:
   - button:
       href: contact
