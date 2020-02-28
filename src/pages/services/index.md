@@ -1,7 +1,7 @@
 ---
-templateKey: 'about-page'
+templateKey: about-page
 path: /about
-title: This is my new title v2.0
+title: This is my new title v2.5
 packages:
   - button:
       href: contact
