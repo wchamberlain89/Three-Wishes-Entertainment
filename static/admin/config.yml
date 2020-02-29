@@ -52,8 +52,68 @@ collections:
         label: "Services"
         name: "services"
         fields: 
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "llamma"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "services-page"}
           - {label:  "Title", name: title, widget: string }
+          - {
+              label:  "Services", 
+              name:   "services" , 
+              widget: "list",
+              fields: [ 
+                 {
+                    label:  "Image", 
+                    name:   "image",
+                    widget: "image"
+                  },
+                 {
+                    label:  "Title",
+                    name:   "title",
+                    widget: "string"
+                },
+                 {
+                    label:  "Description",
+                    name:   "description",
+                    widget: "string"
+                },
+                {
+                    label:  "Inclusions",
+                    name:   "inclusions",
+                    widget: "list",
+                    field:  {
+                      label:  "Inclusion",
+                      name:   "inclusion",
+                      widget: "string"
+                    }
+                },
+                 {
+                    label:  "Pricing",
+                    name:   "pricing",
+                    widget: "list",
+                    field:  {
+                      label:  "Option",
+                      name:   "option",
+                      widget: "string"
+                    }
+                },
+                {
+                    label:  "Button",
+                    name:   "button",
+                    widget: "object",
+                    fields: [
+                       {
+                          label: "Title",
+                          name:  "title",
+                          widget: "string"
+                      },
+                       {
+                          label:   "Page Link",
+                          name:    "href",
+                          widget:  "string",
+                          default: "contact"
+                      }
+                    ]
+                }
+              ]
+            }
           
       - file: "src/pages/about/index.md"
         label: "About"

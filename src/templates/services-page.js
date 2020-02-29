@@ -14,17 +14,21 @@ export const SERVICES_PAGE_QUERY = graphql`
   } 
 `
 
-const ServicesPageTemplate = ({
+export const ServicesPageTemplate = ({
   title,
+  services: {
+    description,
+    inclusions
+  }
 }) => (
-  <div>
-    <h1>{title}</h1>
+  <div style={{width: "100px", height: "100px", backgroundColor: "blue"}}>
+    <h1>{title}, {description}, {inclusions}</h1>
   </div>
 )
 
 ServicesPageTemplate.propTypes = {
     title:         PropTypes.string,
-    packages:      PropTypes.shape({
+    services:      PropTypes.shape({
       image:       PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
       description: PropTypes.string,
       inclusions:  PropTypes.arrayOf(PropTypes.string),
