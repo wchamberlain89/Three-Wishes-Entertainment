@@ -2,13 +2,27 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
-
 export const SERVICES_PAGE_QUERY = graphql`
   query SERVICES_PAGE_QUERY($id: String!) {
     markdownRemark(id: { eq: $id } ) {
       frontmatter {
         title
+        services {
+          description
+          image {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+          }
+          inclusions
+          pricing
+          button {
+            title
+            href
+          }
+        }
       }
     }
   } 
@@ -16,15 +30,19 @@ export const SERVICES_PAGE_QUERY = graphql`
 
 export const ServicesPageTemplate = ({
   title,
-  services: {
-    description,
-    inclusions
-  }
-}) => (
-  <div style={{width: "100px", height: "100px", backgroundColor: "blue"}}>
-    <h1>{title}, {description}, {inclusions}</h1>
-  </div>
-)
+  services
+}) => {
+  services.forEach(service => {
+    console.log("services are",service.image, service.description, service.inclusions, service.pricing, service.button)
+  })
+  return (
+    <div style={{width: "100px", height: "100px", backgroundColor: "blue"}}>
+      <h1>{title}</h1>
+    </div>
+  )
+}
+
+
 
 ServicesPageTemplate.propTypes = {
     title:         PropTypes.string,
@@ -44,11 +62,12 @@ const ServicesPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <Layout>
+    
       <ServicesPageTemplate
         title={frontmatter.title}
+        services={frontmatter.services}
       />
-    </Layout>
+    
   )
 }
 
