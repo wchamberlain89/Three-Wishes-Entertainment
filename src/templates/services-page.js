@@ -59,7 +59,7 @@ ServicesPageTemplate.propTypes = {
 }
 
 const ServicesPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const frontmatter = data.markdownRemark.frontmatter
 
   return (
     

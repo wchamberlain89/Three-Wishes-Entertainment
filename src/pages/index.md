@@ -1,4 +1,6 @@
 ---
+templateKey: 'index-page'
+path: /
 blurb:
   image: /img/blog-index.jpg
   btn2:
