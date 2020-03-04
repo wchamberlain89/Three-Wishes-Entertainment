@@ -5,9 +5,12 @@ import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 import Button from '../components/Button';
+import DecoratedTitle from '../components/DecoratedTitle';
+
+import facebook from '../img/social/facebook.svg';
 
 export const INDEX_PAGE_QUERY = graphql`
-  query INDEX_PAGE_QUERY {
+    query INDEX_PAGE_QUERY {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
@@ -31,6 +34,13 @@ export const INDEX_PAGE_QUERY = graphql`
             link
           }
         }
+        dividerImage {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         intro {
           header
           text
@@ -40,6 +50,13 @@ export const INDEX_PAGE_QUERY = graphql`
           artist {
             name
             description
+            image {
+              childImageSharp {
+                fluid(maxWidth: 250, maxHeight: 350) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
         reccomendations {
@@ -99,12 +116,34 @@ const __IntroPageContainer = styled.div`
     font-size: 2.66em;
     font-weight: 800;
   }
-  .intro-text {
+  .landing-text {
     font-size: 1.5em;
+  }
+  .divider-image {
+    height: 25vh;
+    background-color: grey;
+    text-align: center;
   }
 `
 
-export const IndexPageTemplate = ( { blurb, cards, intro, artists } ) => {
+const __ArtistsSection = styled.div`
+  img {
+    &.left {
+      float: left;
+    }
+    
+    .right {
+      float: right;
+    }
+  }
+  ::after {
+  content: "";
+  clear: both;
+  display: table;
+  }
+`;
+
+export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage } ) => {
   return (
     <Layout>
       <__IntroPageContainer>
@@ -124,9 +163,33 @@ export const IndexPageTemplate = ( { blurb, cards, intro, artists } ) => {
         }
         </CardGrid>
         <div className="width-container">
-          <h3 className="intro-text--header">{intro.header}</h3>
+          <h3 className="title--large">{intro.header}</h3>
           <p className="intro-text">{intro.text}</p>
         </div>  
+        <div
+          className="divider-image"
+          style={{
+            backgroundImage: `url(${
+              !!dividerImage.childImageSharp ? dividerImage.childImageSharp.fluid.src : dividerImage
+            })`,
+            backgroundPosition: `top left`,
+            backgroundAttachment: `fixed`,
+          }}
+        ></div>
+        <__ArtistsSection>
+          <div className="width-container">
+            <DecoratedTitle>{artists.artist[0].name}</DecoratedTitle>
+            <img src={artists.artist[0].image.childImageSharp.fluid.src} className="left"/>
+            <p className="landing-text">{artists.artist[0].description}</p>
+            <a title="facebook" href="https://facebook.com">
+              <img
+                src={facebook}
+                alt="Facebook"
+                style={{ width: '2em', height: '2em' }}
+              />
+            </a>
+          </div>
+        </__ArtistsSection>
       </__IntroPageContainer>
     </Layout>
   )
@@ -138,13 +201,14 @@ export const IndexPageTemplate = ( { blurb, cards, intro, artists } ) => {
 
 const IndexPage = ({data}) => {
   
-  const { frontmatter: { blurb, cards, intro, artists } } = data.markdownRemark;
+  const { frontmatter: { blurb, cards, intro, artists, dividerImage } } = data.markdownRemark;
   return (
     <IndexPageTemplate
       blurb={blurb}
       cards={cards}
       intro={intro}
       artists={artists}
+      dividerImage={dividerImage}
     />
   )
 }
