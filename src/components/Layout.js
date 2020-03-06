@@ -5,12 +5,12 @@ import Navbar from '../components/Navbar'
 import '../styles/main.scss';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 
-const theme = {
+export const theme = {
   purple: "#47337F",
   maxWidth: "1400px"
 }
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   .title {
     font-size: 2em;
 

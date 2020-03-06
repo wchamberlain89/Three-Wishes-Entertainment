@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import IndexPageTemplate from '../../templates/index-page';
+
+
+import { IndexPageTemplate } from '../../templates/index-page';
 
 const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
-  console.log(data);
+  
   if (data) {
     return (
       <IndexPageTemplate
@@ -12,6 +14,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
       cards={data.cards}
       intro={data.intro}
       artists={data.artists}
+      dividerImage={getAsset(data.dividerImage)}
       />
     )
   } else {

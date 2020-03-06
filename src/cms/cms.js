@@ -4,9 +4,13 @@ import cloudinary from 'netlify-cms-media-library-cloudinary'
 
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 import ServicesPagePreview from './preview-templates/ServicesPagePreview';
+import withStyledComponentsRendered from './StylesheetInjector';
 
+
+CMS.registerPreviewTemplate(
+  'index',
+  withStyledComponentsRendered(IndexPagePreview)
+);
 CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
-
-CMS.registerPreviewTemplate('index', IndexPagePreview)
 CMS.registerPreviewTemplate('services', ServicesPagePreview)

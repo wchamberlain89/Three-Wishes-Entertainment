@@ -1,12 +1,11 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
+import { LandingServiceCard } from '../components/ServiceCard';
 import Card from '../components/Card';
-import Button from '../components/Button';
 import DecoratedTitle from '../components/DecoratedTitle';
-
 import facebook from '../img/social/facebook.svg';
 
 export const INDEX_PAGE_QUERY = graphql`
@@ -29,6 +28,13 @@ export const INDEX_PAGE_QUERY = graphql`
         cards {
           title
           content
+          image {
+            childImageSharp {
+              fluid(maxWidth: 250, maxHeight: 250) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           button {
             title
             link
@@ -70,54 +76,25 @@ export const INDEX_PAGE_QUERY = graphql`
   } 
 `
 
-const CardGrid = styled.div`
+export const CardGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 10px;
   align-items: flex-start;
   justify-items: center;
 `
 
-const LandingServicesCard = styled(Card)`
-  background: linear-gradient(180deg, #66549A 0%, #846CCD 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 250px;
-  .title {
-    font-size: 2em;
+export const IntroPageContainer = styled.div`
+  p {
+    font-size: 1.5em;
   }
-  .img-circle {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-  }
-  * + * {
-    margin-top: 1em;
-  }
-`
-
-const LandingServicesCardComponent = ({ title, content, button }) => {
-  return (
-    <LandingServicesCard>
-      <h3 className="title">{title}</h3>
-      <p>{content}</p>
-      <Button>Button</Button>
-    </LandingServicesCard>
-  )
-}
-
-const __IntroPageContainer = styled.div`
   .width-container {
     max-width: ${props => props.theme.maxWidth};
     margin: 0 auto;
   }
-  .intro-text--header {
-    font-size: 2.66em;
+  .text__header {
+    font-size: 3em;
     font-weight: 800;
-  }
-  .landing-text {
-    font-size: 1.5em;
   }
   .divider-image {
     height: 25vh;
@@ -126,8 +103,10 @@ const __IntroPageContainer = styled.div`
   }
 `
 
-const __ArtistsSection = styled.div`
+export const ArtistsSection = styled.div`
   img {
+    max-width: 250px;
+    height: 300px;
     &.left {
       float: left;
     }
@@ -143,19 +122,40 @@ const __ArtistsSection = styled.div`
   }
 `;
 
+export const Reccomendations = styled.div`
+  background-color: #66549A;
+  padding: 5em 0;
+`
+const StyledReccomendationCard = styled(Card)`
+  background-color: white;
+  color: black;
+  font-size: 1em;
+  padding: 1em 10px;
+  width: 250px;
+`;
+
+const ReccomendationCard = (props) => {
+  return(
+    <StyledReccomendationCard>
+      <blockquote>
+        <p>{props.text}</p>
+        <h5>{props.title}</h5>
+      </blockquote>
+    </StyledReccomendationCard>
+  )
+}
+
 export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage } ) => {
   return (
     <Layout>
-      <__IntroPageContainer>
-        <div className="width-container" style={{height: "200px"}}>
-          <h2>I'm a Demo</h2>
-        </div>
+      <IntroPageContainer>
         <CardGrid>
         {
           cards.map((card, index) => 
-              <LandingServicesCardComponent 
+              <LandingServiceCard
                 title={card.title}
                 content={card.content}
+                img={card.image}
                 button={card.button}
                 key={index}
               />
@@ -163,8 +163,8 @@ export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage 
         }
         </CardGrid>
         <div className="width-container">
-          <h3 className="title--large">{intro.header}</h3>
-          <p className="intro-text">{intro.text}</p>
+          <h3 className="text__header">{intro.header}</h3>
+          <p>{intro.text}</p>
         </div>  
         <div
           className="divider-image"
@@ -176,11 +176,11 @@ export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage 
             backgroundAttachment: `fixed`,
           }}
         ></div>
-        <__ArtistsSection>
+        <ArtistsSection>
           <div className="width-container">
             <DecoratedTitle>{artists.artist[0].name}</DecoratedTitle>
-            <img src={artists.artist[0].image.childImageSharp.fluid.src} className="left"/>
-            <p className="landing-text">{artists.artist[0].description}</p>
+            <img src={ artists.artist[0].image.childImageSharp ? artists.artist[0].image.childImageSharp.fluid.src : artists.artist[0].image } className="left"/>
+            <p>{artists.artist[0].description}</p>
             <a title="facebook" href="https://facebook.com">
               <img
                 src={facebook}
@@ -189,8 +189,11 @@ export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage 
               />
             </a>
           </div>
-        </__ArtistsSection>
-      </__IntroPageContainer>
+        </ArtistsSection>
+        <Reccomendations>
+          <ReccomendationCard text={"Hello"} title={"stuff"}/>
+        </Reccomendations>
+      </IntroPageContainer>
     </Layout>
   )
 } 
