@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 2em;
 
     &__large {
-      font-size: 2.66em;
+      font-size: 3em;
     }
 
     &--decorated::before {

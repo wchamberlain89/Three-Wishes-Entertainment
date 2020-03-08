@@ -32,7 +32,7 @@ const StyledDecoratedTitle = styled.h3`
 
 const DecoratedTitle = (props) => {
   return (
-    <StyledDecoratedTitle className="title__large" ><span style={{paddingLeft: "0"}}/>{props.children}<span style={{paddingRight: "0"}}/></StyledDecoratedTitle>
+    <StyledDecoratedTitle {...props} className="title__large" ><span style={{paddingLeft: "0"}}/>{props.children}<span style={{paddingRight: "0"}}/></StyledDecoratedTitle>
   )
 }
 

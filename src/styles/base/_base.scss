@@ -9,4 +9,9 @@ body {
   font-family: 'dosis';
   color: white;
   background-color: $color-primary;
-} 
+}
+
+.width-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}

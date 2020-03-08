@@ -78,8 +78,10 @@ export const INDEX_PAGE_QUERY = graphql`
 
 export const CardGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 10px;
+  max-width: 1300px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 2em;
   align-items: flex-start;
   justify-items: center;
 `
@@ -87,10 +89,6 @@ export const CardGrid = styled.div`
 export const IntroPageContainer = styled.div`
   p {
     font-size: 1.5em;
-  }
-  .width-container {
-    max-width: ${props => props.theme.maxWidth};
-    margin: 0 auto;
   }
   .text__header {
     font-size: 3em;

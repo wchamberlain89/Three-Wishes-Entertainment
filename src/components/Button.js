@@ -18,6 +18,7 @@ const button = styled.button`
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 2px;
+    display:inline-block;
   }
 `
 
