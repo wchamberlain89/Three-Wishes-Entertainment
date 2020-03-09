@@ -38,7 +38,7 @@ export const LandingServiceCard = ({ title, content, img, button }) => {
       <img src={ img.childImageSharp ? img.childImageSharp.fluid.src : img } className="img-circle"/>
       <h3 className="title">{title}</h3>
       <p>{content}</p>
-      <Link to={button.link}><Button><a>{button.title}</a></Button></Link>
+      <Link to={button.link}><Button>{button.title}</Button></Link>
     </ServiceCard>
   )
 }

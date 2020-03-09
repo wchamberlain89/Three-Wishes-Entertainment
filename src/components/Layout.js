@@ -11,18 +11,26 @@ export const theme = {
 }
 
 export const GlobalStyle = createGlobalStyle`
+  html {
+  font-size: 16px;
+  }
+
+  body {
+    font-family: 'dosis';
+    color: white;
+    background-color: ${theme.purple};
+  }
+
+  .width-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
   .title {
     font-size: 2em;
 
     &__large {
       font-size: 3em;
-    }
-
-    &--decorated::before {
-      content: "";
-      display: inline-block;
-      width: 100%;
-      border-bottom: 1px solid white;
     }
   }
 `

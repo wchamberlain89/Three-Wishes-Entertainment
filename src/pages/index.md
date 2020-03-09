@@ -73,7 +73,7 @@ intro:
   header: >-
     I’m some sort of awesome tagline describing how cool our services are HYPE
     HYPE.
-dividerImage: /img/products-grid1.jpg
+dividerImage: /img/PaintingBanner.png
 artists:
   artist:
     - name: Joe Rainbow

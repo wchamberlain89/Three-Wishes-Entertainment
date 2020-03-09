@@ -76,6 +76,15 @@ export const INDEX_PAGE_QUERY = graphql`
   } 
 `
 
+const LandingSection = styled.div`
+
+`
+
+const LandingBlob = styled.img`
+  width: 300px;
+  height: 300px;
+`
+
 export const CardGrid = styled.div`
   display: grid;
   max-width: 1300px;
@@ -90,18 +99,14 @@ export const IntroPageContainer = styled.div`
   p {
     font-size: 1.5em;
   }
-  .text__header {
-    font-size: 3em;
-    font-weight: 800;
-  }
-  .divider-image {
-    height: 25vh;
-    background-color: grey;
-    text-align: center;
-  }
+`
+
+export const DividerImage = styled.div`
+  height: 30vh;
 `
 
 export const ArtistsSection = styled.div`
+  padding-top: 3em;
   img {
     max-width: 250px;
     height: 300px;
@@ -119,6 +124,18 @@ export const ArtistsSection = styled.div`
   display: table;
   }
 `;
+
+export const Intro = styled.div`
+  padding: 10em 0;
+  line-height: 1.5;
+  .intro__header {
+    font-size: 3em;
+    font-weight: bold;
+  }
+  * + * {
+    margin-top: 3em;
+  }
+`
 
 export const Reccomendations = styled.div`
   background-color: #66549A;
@@ -147,34 +164,39 @@ export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage 
   return (
     <Layout>
       <IntroPageContainer>
-        <CardGrid>
-        {
-          cards.map((card, index) => 
-              <LandingServiceCard
-                title={card.title}
-                content={card.content}
-                img={card.image}
-                button={card.button}
-                key={index}
-              />
-          )
-        }
-        </CardGrid>
-        <div className="width-container">
-          <h3 className="text__header">{intro.header}</h3>
-          <p>{intro.text}</p>
-        </div>  
-        <div
-          className="divider-image"
+        <LandingSection>
+          <LandingBlob src="/img/LandingBlob.svg"/>
+          <CardGrid>
+          {
+            cards.map((card, index) => 
+                <LandingServiceCard
+                  title={card.title}
+                  content={card.content}
+                  img={card.image}
+                  button={card.button}
+                  key={index}
+                />
+            )
+          }
+          </CardGrid>
+          <Intro>
+            <div className="width-container">
+              <h3 className="intro__header">{intro.header}</h3>
+              <p>{intro.text}</p>
+            </div>  
+          </Intro>
+        </LandingSection>
+        
+        
+        <DividerImage
           style={{
             backgroundImage: `url(${
               !!dividerImage.childImageSharp ? dividerImage.childImageSharp.fluid.src : dividerImage
             })`,
-            backgroundPosition: `top left`,
-            backgroundAttachment: `fixed`,
           }}
-        ></div>
+        ></DividerImage>
         <ArtistsSection>
+          <DecoratedTitle>Our Artists</DecoratedTitle>
           <div className="width-container">
             <DecoratedTitle>{artists.artist[0].name}</DecoratedTitle>
             <img src={ artists.artist[0].image.childImageSharp ? artists.artist[0].image.childImageSharp.fluid.src : artists.artist[0].image } className="left"/>

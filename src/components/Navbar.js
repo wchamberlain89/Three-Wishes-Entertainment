@@ -33,24 +33,24 @@ const NavBarComponent = () => (
   <StyledHeader>
       <Logo>
         <Link to="/">
-          <a>Three Wishes Entertainment</a>
+          Three Wishes Entertainment
         </Link>
       </Logo>
       <ul className="nav-links">
         <Link to="/">
-          <a>Home</a>
+          Home
         </Link>
         <Link to="/gallery">
-          <a>Gallery</a>
+          Gallery
         </Link>
         <Link to="/services">
-          <a>Services</a>
+          Services
         </Link>
         <Link to="/faq">
-          <a>FAQ</a>
+          FAQ
         </Link>
         <Link to="/contact">
-          <a>Contact</a>
+          Contact
         </Link>
       </ul>
   </StyledHeader>
