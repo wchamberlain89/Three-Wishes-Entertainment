@@ -7,7 +7,10 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components';
 
 export const theme = {
   purple: "#47337F",
-  maxWidth: "1400px"
+  maxWidth: "1400px",
+  gradient: "linear-gradient(180deg, #66549A 0%, #846CCD 100%)",
+  borderRadius: "10px",
+  spacing: ["0.75rem", "1rem", "1.5rem", "3rem", "5rem"], 
 }
 
 export const GlobalStyle = createGlobalStyle`

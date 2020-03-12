@@ -5,7 +5,9 @@ import DecoratedTitle from '../components/DecoratedTitle';
 export const GalleryPageTemplate = () => {
   return (
     <Layout>
-      <DecoratedTitle>Gallery</DecoratedTitle>
+      <div className="width-container">
+        <DecoratedTitle style={{margin: "3rem 0"}}>Gallery</DecoratedTitle>
+      </div>
     </Layout>
   )
 }
@@ -16,4 +18,4 @@ const GalleryPage = () => {
   )
 }
 
-export default GalleryPage
+export default GalleryPage;

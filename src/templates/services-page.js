@@ -67,7 +67,7 @@ export const ServicesPageTemplate = ({
   return (
     <Layout>
       <div className="width-container">  
-        <DecoratedTitle style={{marginTop: "3rem"}}>Services</DecoratedTitle>
+        <DecoratedTitle style={{margin: "3rem 0"}}>Services</DecoratedTitle>
         <ServiceCardGrid>
           {services.map(service => <ServicesServiceCard {...service}/>)}
         </ServiceCardGrid>

@@ -16,6 +16,5 @@ CMS.registerPreviewTemplate(
   'services',
   withStyledComponentsRendered(ServicesPagePreview)
 );
-CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
 

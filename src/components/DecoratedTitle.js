@@ -4,14 +4,11 @@ import styled from 'styled-components';
 const StyledDecoratedTitle = styled.h3`
   display: flex;
   align-items: center;
+  font-weight: 800;
   span {
     display: flex;
     flex-grow: 1;
-    padding: 0 10px;
-
-    &::first-of-type {
-      padding-left: 0px;
-    }
+    padding: 0 50px;
   }
   span::before {
     content: "";
@@ -21,18 +18,12 @@ const StyledDecoratedTitle = styled.h3`
     height: 3px;
     border-radius: 100px;
   }
-  span::first-of-type {
-    padding-left: 0px;
-  }
-  span::last-of-type {
-    padding-right: 0px;
-  }
 `;
 
 
 const DecoratedTitle = (props) => {
   return (
-    <StyledDecoratedTitle {...props} className="title__large" ><span style={{paddingLeft: "0"}}/>{props.children}<span style={{paddingRight: "0"}}/></StyledDecoratedTitle>
+    <StyledDecoratedTitle {...props} className="title__large" ><span/>{props.children}<span/></StyledDecoratedTitle>
   )
 }
 
