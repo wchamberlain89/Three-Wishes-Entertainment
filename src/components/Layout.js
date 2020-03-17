@@ -24,17 +24,28 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${theme.purple};
   }
 
-  .width-container {
-    max-width: 1400px;
-    margin: 0 auto;
+  h1, .fs--xxl {
+    font-size: 4.209em;
+  }
+  h2, .fs-xl {
+    font-size: 3.157em;
+  }
+  h3, .fs-l {
+    font-size: 2.369em;
+  }
+  h4, .fs-m {
+    font-size: 1.777em;
+  }
+  h5, .fs-s {
+    font-size: 1.333em;
+  }
+  h6, .fs-xs {
+    font-size: 1em;
   }
 
-  .title {
-    font-size: 2em;
-
-    &__large {
-      font-size: 3em;
-    }
+  .width-container {
+    max-width: 1140px;
+    margin: 0 auto;
   }
 `
 

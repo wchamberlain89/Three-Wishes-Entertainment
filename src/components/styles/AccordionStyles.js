@@ -9,7 +9,7 @@ const AccordionContainer = styled.div`
     background-color: #FFFFFF;
     color: #000;
     cursor: pointer;
-    padding: .75em 1em;
+    padding: .5em .75em;
     border-radius: 10px;
     display: flex;
     align-items: center;

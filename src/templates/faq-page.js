@@ -49,7 +49,7 @@ export const FaqPageTemplate = ({
   return (
     <Layout>
       <div className="width-container">
-        <DecoratedTitle style={{margin: "3rem 0"}}>{title}</DecoratedTitle>
+        <DecoratedTitle style={{margin: "3rem 0"}}><h1 className="fs-xl">{title}</h1></DecoratedTitle>
         
         <QuestionContainer>
           {

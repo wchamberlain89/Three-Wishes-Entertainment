@@ -6,7 +6,7 @@ export const GalleryPageTemplate = () => {
   return (
     <Layout>
       <div className="width-container">
-        <DecoratedTitle style={{margin: "3rem 0"}}>Gallery</DecoratedTitle>
+        <DecoratedTitle style={{margin: "3rem 0"}}><h1 className="fs-xl">Gallery</h1></DecoratedTitle>
       </div>
     </Layout>
   )

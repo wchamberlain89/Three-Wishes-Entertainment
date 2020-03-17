@@ -11,7 +11,7 @@ const Footer = styled.div`
     font-size: 1.5em;
   }
   .inner {
-    max-width: 1000px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     & > * + * {
