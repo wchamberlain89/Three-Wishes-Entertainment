@@ -5,19 +5,19 @@ cards:
       link: /services
     image: /img/flavor_wheel.jpg
     title: Face Painting
-    content: Heres some content
+    content: >-
+      Our Face Painter, Shawna Fae, uses only high quality supplies and has
+      special techniques to paint vibrant fast or detailed designs. Includes a
+      personalized face paint and gift for the guest of honor!
   - button:
       title: details
       link: /services
     image: /img/og-image.jpg
     title: Balloon Twisting
     content: >-
-      Quick Description of your Package would go here! Lorem ipsum dolor sit
-      amet, consectetur adipiscing elit. Suspendisse aliquet justo ut risus
-      fermentum, vit ae rhoncus magna maximus. Pellentesque convallis porta
-      pellentesque. Donec sodales orci eget ultrices feugiat. Duis sagittis odio
-      ac elit semper, a placerat dui semper. Sed condimentum porta quam sit amet
-      bibendum.
+      Rainbow Joe makes amazing balloon creations for your party! He arrives at
+      your party with a custom, detailed balloon for the guest of honor. He can
+      make either fast or detailed balloons.
   - button:
       title: details
       link: /services
