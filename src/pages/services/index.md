@@ -1,73 +1,29 @@
 ---
-templateKey: 'services-page'
+templateKey: services-page
 path: /services
-title: Here is title v4.6
+title: Services
 services:
   - button:
-      href: contact
-      title: asdfasdf
-    image: /img/apple-touch-icon.png
-    title: dafgs
-    description: sdfgsdfg
+      link: contact
+      title: Book Now!
+    image: /img/products-full-width.jpg
+    title: Face Painting
+    description: We do Facepainting
     inclusions:
-      - asdfaesdf
+      - Face painting done by people
+      - We also do like stuff
     pricing:
-      - asdfasdf
-      - asdfasdf
+      - 1 Hour - $120
   - button:
-      href: contact
-      title: asdfasdf
-    image: /img/apple-touch-icon.png
-    title: dafgs
-    description: sdfgsdfg
+      link: contact
+      title: Book Now
+    image: /img/PaintingBanner.png
+    title: Balloon Twisting
+    description: Balloon Twisting done by proffesionals
     inclusions:
-      - asdfaesdf
+      - Choose from 20 different designs
+      - High Quality Balloons
     pricing:
-      - asdfasdf
-      - asdfasdf
-  - button:
-      href: contact
-      title: asdfasdf
-    image: /img/apple-touch-icon.png
-    title: dafgs
-    description: Quick Description of your Package would go here! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet justo ut risus fermentum, vit ae rhoncus magna maximus. Pellentesque convallis porta pellentesque. Donec sodales orci eget ultrices feugiat. Duis sagittis odio ac elit semper, a placerat dui semper. Sed condimentum porta quam sit amet bibendum.
-    inclusions:
-      - asdfaesdf
-    pricing:
-      - asdfasdf
-      - asdfasdf
-  - button:
-      href: contact
-      title: asdfasdf
-    image: /img/apple-touch-icon.png
-    title: dafgs
-    description: Quick Description of your Package would go here! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet justo ut risus fermentum, vit ae rhoncus magna maximus. Pellentesque convallis porta pellentesque. Donec sodales orci eget ultrices feugiat. Duis sagittis odio ac elit semper, a placerat dui semper. Sed condimentum porta quam sit amet bibendum.
-    inclusions:
-      - asdfaesdf
-    pricing:
-      - asdfasdf
-      - asdfasdf
-  - button:
-      href: contact
-      title: asdfasdf
-    image: /img/apple-touch-icon.png
-    title: dafgs
-    description: Quick Description of your Package would go here! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet justo ut risus fermentum, vit ae rhoncus magna maximus. Pellentesque convallis porta pellentesque. Donec sodales orci eget ultrices feugiat. Duis sagittis odio ac elit semper, a placerat dui semper. Sed condimentum porta quam sit amet bibendum.
-    inclusions:
-      - asdfaesdf
-    pricing:
-      - asdfasdf
-      - asdfasdf
-  - button:
-      href: contact
-      title: asdfasdf
-    image: /img/apple-touch-icon.png
-    title: dafgs
-    description: Quick Description of your Package would go here! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet justo ut risus fermentum, vit ae rhoncus magna maximus. Pellentesque convallis porta pellentesque. Donec sodales orci eget ultrices feugiat. Duis sagittis odio ac elit semper, a placerat dui semper. Sed condimentum porta quam sit amet bibendum.
-    inclusions:
-      - asdfaesdf
-    pricing:
-      - asdfasdf
-      - asdfasdf
+      - 1 Hours - $120
 ---
 
