@@ -1,28 +1,16 @@
 ---
-templateKey: 'index-page'
-path: /
-blurb:
-  image: /img/blog-index.jpg
-  btn2:
-    link: /about
-    title: I'm a title
-  btn1:
-    title: Title
-    link: Link
-  heading: Title
-  text: Link
 cards:
   - button:
       title: details
       link: /services
     image: /img/flavor_wheel.jpg
-    title: umm whatever
+    title: Face Painting
     content: Heres some content
   - button:
       title: details
       link: /services
     image: /img/og-image.jpg
-    title: Services Card 2
+    title: Balloon Twisting
     content: >-
       Quick Description of your Package would go here! Lorem ipsum dolor sit
       amet, consectetur adipiscing elit. Suspendisse aliquet justo ut risus
@@ -34,7 +22,7 @@ cards:
       title: details
       link: /services
     image: /img/og-image.jpg
-    title: Services Card 2
+    title: Airbrush Tattoos
     content: >-
       Quick Description of your Package would go here! Lorem ipsum dolor sit
       amet, consectetur adipiscing elit. Suspendisse aliquet justo ut risus
@@ -53,6 +41,19 @@ cards:
       Pellentesque convallis porta pellentesque. Donec sodales orci eget
       ultrices feugiat. Duis sagittis odio ac elit semper, a placerat dui
       semper. Sed condimentum porta quam sit amet bibendum.
+dividerImage: /img/PaintingBanner.png
+path: /
+templateKey: index-page
+blurb:
+  image: /img/blog-index.jpg
+  btn2:
+    link: /about
+    title: I'm a title
+  btn1:
+    title: Title
+    link: Link
+  heading: Title
+  text: Link
 intro:
   text: >-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque purus
@@ -73,12 +74,11 @@ intro:
   header: >-
     I’m some sort of awesome tagline describing how cool our services are HYPE
     HYPE.
-dividerImage: /img/PaintingBanner.png
 artists:
   artist:
     - name: Joe Rainbow
       image: /img/flavor_wheel.jpg
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum magna commodo accumsan molestie. Vehicula arcu ultrices tincidunt dictumst. Suscipit eu sagittis leo consectetur libero, tincidunt ac. Mattis enim suspendisse dignissim nunc neque scelerisque ac.
+      description: Joe the rainbow dude
   header: Artists
 reccomendations:
   - reccomendation:
