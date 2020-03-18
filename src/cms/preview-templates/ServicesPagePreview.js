@@ -6,6 +6,7 @@ const ServicesPagePreview = ({ entry, getAsset }) => {
   return (
     <ServicesPageTemplate
       title={entry.getIn(['data', 'title'])}
+      services={entry.getIn(['data', 'services'])}
     />
   )
 }

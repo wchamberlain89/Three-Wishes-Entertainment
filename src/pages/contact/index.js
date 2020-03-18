@@ -9,22 +9,23 @@ import Card from '../../components/Card';
 
 const ContactLayout = styled.div`
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
-
+  align-items: center;
   .purple {
     background: ${props => props.theme.gradient};
   }
 `;
 
-const StyledForm = styled.form`
+const ContactForm = styled.form`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1.5em;
+  
   input {
     padding: .5em 1em;
     color: white;
-    border: 2px solid white;
+    border: 1px solid white;
     background-color: ${({ theme }) => theme.purple};
     font-family: dosis;
   }
@@ -41,7 +42,7 @@ const Contact = () => {
         <DecoratedTitle style={{margin: "3rem 0"}}><h1 className="fs-xl">Contact Us</h1></DecoratedTitle>
         <ContactLayout>
           <div>
-            <p className="fs-m">
+            <p className="fs-s" style={{lineHeight: "1.3", padding: "0 1rem 0 0"}}>
               <div className="fs-m">
                 Hey thanks for checking us out!
               </div>
@@ -59,9 +60,9 @@ const Contact = () => {
           </div>
 
           <Card className='purple' style={{ padding: "2em 1.5em" }}>
-            <StyledForm onSubmit={handleSubmit(onSubmit)}>
+            <ContactForm onSubmit={handleSubmit(onSubmit)}>
               <DecoratedTitle><h2 className='fs-l'>Booking</h2></DecoratedTitle>
-              <h3 className='fs-xl'>Get in touch about your event!</h3>
+              <h3 className='fs-l'>Get in touch about your event!</h3>
               <input type="text" placeholder="Name" name="Name" ref={register({required: true, maxLength: 80})} />
               <input type="text" placeholder="Email" name="Email" ref={register({required: true, pattern: /^\S+@\S+$/i})} />
               <input type="tel" placeholder="Phone Number" name="Phone Number" ref={register({required: true, maxLength: 12})} />
@@ -74,8 +75,8 @@ const Contact = () => {
                 <option value="3">3 Hours</option>
               </select>
 
-              <input type="submit" />
-            </StyledForm>
+              <Button type='submit'>Send Inquiry</Button>
+            </ContactForm>
           </Card>
         </ContactLayout>
       </div>
