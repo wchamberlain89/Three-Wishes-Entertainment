@@ -95,12 +95,6 @@ export const CardGrid = styled.div`
   justify-items: center;
 `
 
-export const IntroPageContainer = styled.div`
-  p {
-    font-size: 1.5em;
-  }
-`
-
 export const DividerImage = styled.div`
   height: 30vh;
 `
@@ -127,7 +121,6 @@ export const ArtistsSection = styled.div`
 
 export const Intro = styled.div`
   padding: 10em 0;
-  line-height: 1.5;
   .intro__header {
     font-size: 3em;
     font-weight: bold;
@@ -137,33 +130,25 @@ export const Intro = styled.div`
   }
 `
 
-export const Reccomendations = styled.div`
+const Reccomendations = styled.div`
   background-color: #66549A;
   padding: 5em 0;
 `
-const StyledReccomendationCard = styled(Card)`
-  background-color: white;
-  color: black;
-  font-size: 1em;
-  padding: 1em 10px;
-  width: 250px;
-`;
 
 const ReccomendationCard = (props) => {
   return(
-    <StyledReccomendationCard>
+    <Card color="#000">
       <blockquote>
         <p>{props.text}</p>
         <h5>{props.title}</h5>
       </blockquote>
-    </StyledReccomendationCard>
+    </Card>
   )
 }
 
 export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage } ) => {
   return (
     <Layout>
-      <IntroPageContainer>
         <LandingSection>
           <LandingBlob src="/img/LandingBlob.svg"/>
           <CardGrid>
@@ -181,8 +166,8 @@ export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage 
           </CardGrid>
           <Intro>
             <div className="width-container">
-              <h3 className="intro__header">{intro.header}</h3>
-              <p>{intro.text}</p>
+              <h3 className="fs-xl">{intro.header}</h3>
+              <p className="fs-s">{intro.text}</p>
             </div>  
           </Intro>
         </LandingSection>
@@ -194,7 +179,8 @@ export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage 
               !!dividerImage.childImageSharp ? dividerImage.childImageSharp.fluid.src : dividerImage
             })`,
           }}
-        ></DividerImage>
+        />
+
         <ArtistsSection>
           <DecoratedTitle>Our Artists</DecoratedTitle>
           <div className="width-container">
@@ -210,10 +196,10 @@ export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage 
             </a>
           </div>
         </ArtistsSection>
+
         <Reccomendations>
           <ReccomendationCard text={"Hello"} title={"stuff"}/>
         </Reccomendations>
-      </IntroPageContainer>
     </Layout>
   )
 } 

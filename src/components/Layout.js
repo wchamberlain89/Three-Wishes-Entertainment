@@ -39,7 +39,7 @@ export const GlobalStyle = createGlobalStyle`
   h5, .fs-s {
     font-size: 1.333em;
   }
-  h6, .fs-xs {
+  h6, p, .fs-xs {
     font-size: 1em;
   }
 
