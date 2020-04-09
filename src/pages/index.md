@@ -77,8 +77,11 @@ intro:
 artists:
   artist:
     - name: Joe Rainbow
-      image: /img/flavor_wheel.jpg
+      image: /img/47380504_927809704075354_3780856691306790912_o.jpg
       description: Joe the rainbow dude
+    - name: Shawna Fae
+      image: /img/products-full-width.jpg
+      description: Shawna Fae FacePainting Extrodinaire.
   header: Artists
 reccomendations:
   - reccomendation:
