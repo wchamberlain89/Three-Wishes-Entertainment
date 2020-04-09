@@ -3,16 +3,20 @@ import Button from './Button';
 import Card from './Card';
 import DecoratedTitle from './DecoratedTitle';
 import Footer from './Footer';
+import LandingServiceCard from './LandingServiceCard';
 import Layout from './Layout';
-import Navbar from './NavBar';
+import MaxWidth from './MaxWidth';
+import Navbar from './Navbar';
 
 
-export default {
+export {
   Accordion,
   Button,
   Card,
   DecoratedTitle,
   Footer,
+  LandingServiceCard,
   Layout,
+  MaxWidth,
   Navbar,
 }
