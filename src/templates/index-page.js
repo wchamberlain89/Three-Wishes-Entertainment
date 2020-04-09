@@ -1,8 +1,8 @@
 import React from 'react'
 import { 
-  graphql, 
-  Link 
+  graphql,
 } from 'gatsby'
+
 import styled from 'styled-components';
 
 import {
@@ -10,6 +10,7 @@ import {
   DecoratedTitle, 
   LandingServiceCard,
   Layout,
+  MaxWidth
 } from './../components';
 
 import facebook from '../img/social/facebook.svg';
@@ -82,10 +83,6 @@ export const INDEX_PAGE_QUERY = graphql`
   } 
 `
 
-const LandingSection = styled.div`
-
-`
-
 const LandingBlob = styled.img`
   width: 300px;
   height: 300px;
@@ -107,23 +104,50 @@ export const DividerImage = styled.div`
 
 export const ArtistsSection = styled.div`
   padding-top: 3em;
-  img {
-    max-width: 250px;
-    height: 300px;
-    &.left {
-      float: left;
-    }
-    
-    .right {
-      float: right;
-    }
-  }
+
   ::after {
-  content: "";
-  clear: both;
-  display: table;
+    display: table;
+    content: "";
+    clear: both;
   }
 `;
+
+ArtistsSection.Image = styled.img`
+  max-width: 250px;
+  height: 300px;
+
+  &.left {
+    float: left;
+  }
+
+  &.right {
+    float: right;
+  }
+
+  ::after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+`
+
+const Artist = (props) => {
+  console.log(props)
+  return (
+    <div>
+      <DecoratedTitle><h5>{name}</h5></DecoratedTitle>
+      <ArtistsSection.Image src={ image.childImageSharp ? image.childImageSharp.fluid.src : image } className="left"/>
+      <p class="fs-s">{ description }</p>
+      <a title="facebook" href="https://facebook.com">
+        <img
+          src={facebook}
+          alt="Facebook"
+          style={{ width: '2em', height: '2em' }}
+        />
+      </a>
+    </div>
+  )
+}
 
 export const Intro = styled.div`
   padding: 10em 0;
@@ -155,7 +179,7 @@ const ReccomendationCard = (props) => {
 export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage } ) => {
   return (
     <Layout>
-        <LandingSection>
+        
           <LandingBlob src="/img/LandingBlob.svg"/>
           <CardGrid>
           {
@@ -176,7 +200,7 @@ export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage 
               <p className="fs-s">{intro.text}</p>
             </div>  
           </Intro>
-        </LandingSection>
+        
         
         
         <DividerImage
@@ -188,19 +212,17 @@ export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage 
         />
 
         <ArtistsSection>
-          <DecoratedTitle>Our Artists</DecoratedTitle>
-          <div className="width-container">
-            <DecoratedTitle>{artists.artist[0].name}</DecoratedTitle>
-            <img src={ artists.artist[0].image.childImageSharp ? artists.artist[0].image.childImageSharp.fluid.src : artists.artist[0].image } className="left"/>
-            <p>{artists.artist[0].description}</p>
-            <a title="facebook" href="https://facebook.com">
-              <img
-                src={facebook}
-                alt="Facebook"
-                style={{ width: '2em', height: '2em' }}
-              />
-            </a>
-          </div>
+          <DecoratedTitle><h3>Our Artists</h3></DecoratedTitle>
+          <MaxWidth>
+            {
+              artists.artist.map( artist => {
+                console.log(artist);
+                return (
+                  <Artist artist={artist}/>
+                )
+              })
+            }
+          </MaxWidth>
         </ArtistsSection>
 
         <Reccomendations>
@@ -217,6 +239,8 @@ export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage 
 const IndexPage = ({data}) => {
   
   const { frontmatter: { blurb, cards, intro, artists, dividerImage } } = data.markdownRemark;
+  console.log(artists)
+  
   return (
     <IndexPageTemplate
       blurb={blurb}

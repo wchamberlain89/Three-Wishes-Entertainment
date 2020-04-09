@@ -5,6 +5,7 @@ import DecoratedTitle from './DecoratedTitle';
 import Footer from './Footer';
 import LandingServiceCard from './LandingServiceCard';
 import Layout from './Layout';
+import MaxWidth from './MaxWidth';
 import Navbar from './Navbar';
 
 
@@ -16,5 +17,6 @@ export {
   Footer,
   LandingServiceCard,
   Layout,
+  MaxWidth,
   Navbar,
 }

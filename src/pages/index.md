@@ -78,7 +78,7 @@ artists:
   artist:
     - name: Joe Rainbow
       image: /img/flavor_wheel.jpg
-      description: Joe the rainbow dude
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum magna commodo accumsan molestie. Vehicula arcu ultrices tincidunt dictumst. Suscipit eu sagittis leo consectetur libero, tincidunt ac. Mattis enim suspendisse dignissim nunc neque scelerisque ac.
   header: Artists
 reccomendations:
   - reccomendation:
