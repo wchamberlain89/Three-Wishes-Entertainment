@@ -1,11 +1,17 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { 
+  graphql, 
+  Link 
+} from 'gatsby'
 import styled from 'styled-components';
 
-import Layout from '../components/Layout';
-import { LandingServiceCard } from '../components/ServiceCard';
-import Card from '../components/Card';
-import DecoratedTitle from '../components/DecoratedTitle';
+import {
+  Card,
+  DecoratedTitle, 
+  LandingServiceCard,
+  Layout,
+} from './../components';
+
 import facebook from '../img/social/facebook.svg';
 
 export const INDEX_PAGE_QUERY = graphql`

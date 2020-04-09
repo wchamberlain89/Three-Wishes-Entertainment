@@ -5,10 +5,10 @@ import DecoratedTitle from './DecoratedTitle';
 import Footer from './Footer';
 import LandingServiceCard from './LandingServiceCard';
 import Layout from './Layout';
-import Navbar from './NavBar';
+import Navbar from './Navbar';
 
 
-export default {
+export {
   Accordion,
   Button,
   Card,

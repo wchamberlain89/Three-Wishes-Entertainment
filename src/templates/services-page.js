@@ -1,11 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components';
 import { graphql } from 'gatsby'
-import { ServiceCard } from '../components/ServiceCard';
-import Layout from '../components/Layout';
-import DecoratedTitle from '../components/DecoratedTitle';
-import Button from '../components/Button';
+import {
+  Button, 
+  Card,
+  DecoratedTitle,
+  Layout,
+} from '../components';
+
 
 export const PAGE_QUERY = graphql`
   query PAGE_QUERY($id: String!) {
@@ -47,7 +49,7 @@ const ServiceCardGrid = styled.div`
 
 const ServicesServiceCard = ({ title, description, image, inclusions, pricing, button }) => {
   return(
-    <ServiceCard>
+    <Card>
       <img src={ image.childImageSharp ? image.childImageSharp.fluid.src : image }/>
       <h3 className="title">{title}</h3>
       <p>{description}</p>
@@ -56,7 +58,7 @@ const ServicesServiceCard = ({ title, description, image, inclusions, pricing, b
       <h3 className="title">Pricing</h3>
       <p>{pricing}</p>
       <Button>Book Now</Button>
-    </ServiceCard>
+    </Card>
   )
 }
 
