@@ -20,7 +20,7 @@ const Image = styled.img`
 ///MAIN COMPONENTS
 const Card = ({ classes, children, ...restProps}) => {
   return (
-    <Container class={classNames('card', classes)} { ...restProps }>
+    <Container className={classNames('card', classes)} { ...restProps }>
       { children }
     </Container>
   )
@@ -28,7 +28,7 @@ const Card = ({ classes, children, ...restProps}) => {
 
 Card.Title = ({ classes, children, ...restProps}) => {
   return (
-    <h3 class={classNames('card__title', classes)} {...restProps}>
+    <h3 className={classNames('card__title', classes)} {...restProps}>
       { children }
     </h3>
   )
@@ -36,7 +36,7 @@ Card.Title = ({ classes, children, ...restProps}) => {
 
 Card.Text = ({ classes, children, ...restProps }) => {
   return (
-    <p class={classNames('card__text', classes)} {...restProps}>
+    <p className={classNames('card__text', classes)} {...restProps}>
       { children }
     </p>
   )
@@ -46,7 +46,7 @@ Card.Image = ({ src, classes, ...restProps }) => {
   return (
     <Image 
       src={src}
-      class={classNames('card__image', classes)} 
+      className={classNames('card__image', classes)} 
       {...restProps}
     />
   )
