@@ -173,7 +173,7 @@ export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage 
             visibleSlides={1}
             >
             <Slider style={{height: "300px",width: "50%", margin: "0 auto"}}>
-            {slideImages.map((image, index) => <Slide index={index}><img style={{width: "100%"}}src={image}/></Slide>)}
+            {slideImages.map((image, index) => <Slide index={index}><img style={{width: "100%"}} src={image}/></Slide>)}
             </Slider>
             <StyledDotGroup/>
           </CarouselProvider>

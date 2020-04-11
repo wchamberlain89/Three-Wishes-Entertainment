@@ -2,7 +2,6 @@ import Accordion from './Accordion';
 import Artist from './Artist';
 import Button from './Button';
 import Card from './Card';
-import Carousel from './Carousel';
 import DecoratedTitle from './DecoratedTitle';
 import Footer from './Footer';
 import LandingServiceCard from './LandingServiceCard';
@@ -16,7 +15,6 @@ export {
   Artist,
   Button,
   Card,
-  Carousel,
   DecoratedTitle,
   Footer,
   LandingServiceCard,
