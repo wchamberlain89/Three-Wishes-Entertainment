@@ -50,7 +50,8 @@ const ArtistSocials = styled.div`
 `;
 
 const Artist = ({artist : { description, image, name }, reverse}) => {
- return (
+  console.log(image)
+  return (
     <ArtistContainer reverse={reverse}>
       <ArtistImage src={ image.childImageSharp ? image.childImageSharp.fluid.src : image }/>
       <ArtistContent>

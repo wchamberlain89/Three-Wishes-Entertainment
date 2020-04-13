@@ -66,25 +66,20 @@ export const INDEX_PAGE_QUERY = graphql`
           header
           text
         }
-        # artists {
-        #   header
-        #   artist {
-        #     name
-        #     description
-        #     image {
-        #       childImageSharp {
-        #         fluid(maxWidth: 250, maxHeight: 350) {
-        #           ...GatsbyImageSharpFluid
-        #         }
-        #       }
-        #     }
-        #   }
-        # }
-        reccomendations {
-          reccomendation {
-            title
-            text
+        artists {
+          name
+          description
+          image {
+            childImageSharp {
+              fluid(maxWidth: 250, maxHeight: 350) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
+        }
+        reccomendations {
+          title
+          text
         }
       }
     }
@@ -210,7 +205,7 @@ export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage 
         <h2 className="fs-xl">Our Artists</h2>
           
             {
-              artists.artist.map( (artist, index) => {
+              artists.map( (artist, index) => {
                 const reverse = index % 2 === 1;
                 return (
                   <Artist artist={artist} reverse={reverse} key={artist.name}/>
@@ -237,17 +232,15 @@ const IndexPage = ({data}) => {
   const { frontmatter: { blurb, cards, intro, artists, dividerImage } } = data.markdownRemark;
   console.log(artists)
   
-  // return (
-  //   <IndexPageTemplate
-  //     blurb={blurb}
-  //     cards={cards}
-  //     intro={intro}
-  //     artists={artists}
-  //     dividerImage={dividerImage}
-  //   />
-  // )
-
-  return (<div>Index Page</div>)
+  return (
+    <IndexPageTemplate
+      blurb={blurb}
+      cards={cards}
+      intro={intro}
+      artists={artists}
+      dividerImage={dividerImage}
+    />
+  )
 }
 
 export default IndexPage

@@ -10,7 +10,7 @@ const WidthContainer = styled.div`
 
 const MaxWidth = ({ children, classes, ...restProps }) => {
   return (
-    <WidthContainer class={classNames('mWidth', classes)} { ...restProps }>{ children }</WidthContainer>
+    <WidthContainer className={classNames('mWidth', classes)} { ...restProps }>{ children }</WidthContainer>
   )
 }
 
