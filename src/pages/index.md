@@ -74,8 +74,23 @@ intro:
   header: >-
     I’m some sort of awesome tagline describing how cool our services are HYPE
     HYPE.
+artists:
+  - name: Rainbow Joe
+    image: /img/47380504_927809704075354_3780856691306790912_o.jpg
+    description: >-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum magna
+      commodo accumsan molestie. Vehicula arcu ultrices tincidunt dictumst.
+      Suscipit eu sagittis leo consectetur libero, tincidunt ac. Mattis enim
+      suspendisse dignissim nunc neque scelerisque ac.
+  - name: Shawna Fae
+    image: /img/91065104_10221600039418777_4300196543236931584_o.jpg
+    description: >-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum magna
+      commodo accumsan molestie. Vehicula arcu ultrices tincidunt dictumst.
+      Suscipit eu sagittis leo consectetur libero, tincidunt ac. Mattis enim
+      suspendisse dignissim nunc neque scelerisque ac.
 reccomendations:
-  - reccomendation:
-      title: Title
-      text: Text
+  - title: I'm sure a title
+    text: Working with Joe and Shawna was such a pleasant experience
 ---
+
