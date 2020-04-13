@@ -79,4 +79,3 @@ reccomendations:
       title: Title
       text: Text
 ---
-
