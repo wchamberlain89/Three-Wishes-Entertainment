@@ -5,25 +5,13 @@ title: Services
 services:
   - button:
       link: contact
-      title: Book Now!
-    image: /img/products-full-width.jpg
-    title: Face Painting
-    description: We do Facepainting
-    inclusions:
-      - Face painting done by people
-      - We also do like stuff
-    pricing:
-      - 1 Hour - $120
-  - button:
-      link: contact
-      title: Book Now
+      title: Button Title
     image: /img/PaintingBanner.png
-    title: Balloon Twisting
-    description: Balloon Twisting done by proffesionals
+    title: Face Painting
+    description: Face Painting
     inclusions:
-      - Choose from 20 different designs
-      - High Quality Balloons
+      - 'Inclusion #1'
     pricing:
-      - 1 Hours - $120
+      - 'Price #1'
 ---
 
