@@ -74,18 +74,8 @@ intro:
   header: >-
     I’m some sort of awesome tagline describing how cool our services are HYPE
     HYPE.
-artists:
-  artist:
-    - name: Joe Rainbow
-      image: /img/47380504_927809704075354_3780856691306790912_o.jpg
-      description: Joe the rainbow dude
-    - name: Shawna Fae
-      image: /img/products-full-width.jpg
-      description: Shawna Fae FacePainting Extrodinaire.
-  header: Artists
 reccomendations:
   - reccomendation:
       title: Title
       text: Text
 ---
-
