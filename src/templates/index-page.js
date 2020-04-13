@@ -22,8 +22,7 @@ import {
 
 
 import 'pure-react-carousel/dist/react-carousel.es.css';
-const balloons = require('../img/balloons.jpg');
-
+const balloons = require("../img/balloons.jpg");
 export const INDEX_PAGE_QUERY = graphql`
     query INDEX_PAGE_QUERY {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
@@ -92,17 +91,17 @@ export const INDEX_PAGE_QUERY = graphql`
   } 
 `
 
-const LandingBlob = styled.img`
+export const LandingBlob = styled.img`
   width: 300px;
   height: 300px;
 `
-const StyledDotGroup = styled(DotGroup)`
+export const StyledDotGroup = styled(DotGroup)`
   display: flex;
   justify-content: center;
   height: 15px;
 `
 
-const CardGrid = styled.div`
+export const CardGrid = styled.div`
   display: grid;
   max-width: 1300px;
   width: 90%;
@@ -113,7 +112,7 @@ const CardGrid = styled.div`
   justify-items: center;
 `
 
-const DividerImage = styled.div`
+export const DividerImage = styled.div`
   height: 30vh;
 `
 
@@ -128,18 +127,18 @@ export const Intro = styled.div`
   }
 `
 
-const Reccomendations = styled.div`
+export const Reccomendations = styled.div`
   background-color: #66549A;
   padding: 5em 0;
 `
 
-const slideImages = [
+export const slideImages = [
   require('../img/balloons.jpg'),
   require('../img/test1.jpg'),
   require('../img/test2.jpg'),
 ]
 
-const ReccomendationCard = (props) => {
+export const ReccomendationCard = (props) => {
   return(
     <Card color="#000">
       <blockquote>
@@ -150,13 +149,13 @@ const ReccomendationCard = (props) => {
   )
 }
 
-const ArtistsSection = styled.div`
+export const ArtistsSection = styled.div`
   padding: 3rem 0;
 `
 
-const LandingContainer = styled.div`
+export const LandingContainer = styled.div`
   min-height: 75vh;
-  background: #66549A;
+  background: url(${balloons});
 `
 
 export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage } ) => {
@@ -170,9 +169,10 @@ export const IndexPageTemplate = ( { blurb, cards, intro, artists, dividerImage 
             totalSlides={3}
             interval={3000}
             isPlaying={true}
+            infinite={true}
             visibleSlides={1}
             >
-            <Slider style={{height: "300px",width: "50%", margin: "0 auto"}}>
+            <Slider style={{maxHeight:"75vh", width: "50%", margin: "0 auto"}}>
             {slideImages.map((image, index) => <Slide index={index}><img style={{width: "100%"}} src={image}/></Slide>)}
             </Slider>
             <StyledDotGroup/>

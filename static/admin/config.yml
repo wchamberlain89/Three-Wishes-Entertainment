@@ -22,23 +22,23 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: "Blurb", name: "blurb", widget: "object",
-            fields: [
-              {label: "Heading", name: "heading", widget: "string"},
-              {label: "Text",    name: "text",    widget: "string"},
-              {label: "Button1", name: "btn1", widget: "object", 
-                fields: [
-                  {label: "Title", name: "title", widget: "string"},
-                  {label: "Link", name: "link", widget: "string"}
-                ]
-              },
-              {label: "Button2", name: "btn2", widget: "object", 
-                fields: [
-                  {label: "Title", name: "title", widget: "string"},
-                  {label: "Link", name: "link", widget: "string"}
-                ]
-              },
-              {label: "Image", name: "image", widget: "image"}
-            ]
+              fields: [
+                {label: "Heading", name: "heading", widget: "string"},
+                {label: "Text",    name: "text",    widget: "string"},
+                {label: "Button1", name: "btn1", widget: "object", 
+                  fields: [
+                    {label: "Title", name: "title", widget: "string"},
+                    {label: "Link", name: "link", widget: "string"}
+                  ]
+                },
+                {label: "Button2", name: "btn2", widget: "object", 
+                  fields: [
+                    {label: "Title", name: "title", widget: "string"},
+                    {label: "Link", name: "link", widget: "string"}
+                  ]
+                },
+                {label: "Image", name: "image", widget: "image"}
+              ]
             }
           - {label: "Cards", name: "cards", widget: "list", 
               fields: [
@@ -61,20 +61,15 @@ collections:
             }
           - {label: "Divider Image", name: "dividerImage", widget: "image"}
           - {label: "Artists",       name: "artists",      widget: "list", 
-              fields: [
-                {label: "Artist", name: "artist", widget: "object",
+              field: [
+                 {label: "Name",        name: "name",        widget: "string"},
+                 {label: "Image",       name: "image",       widget: "image"},
+                 {label: "Description", name: "description", widget: "string"},
+                 {label: "Social Link", name: "socialLink",  widget: "list", 
                   fields: [
-                    {label: "Name",        name: "name",        widget: "string"},
-                    {label: "Image",       name: "image",       widget: "image"},
-                    {label: "Description", name: "description", widget: "string"},
-                    {label: "Social Link", name: "socialLink",  widget: "list", 
-                      fields: [
-                        {label: "Image", name: "image", widget: "image"},
-                        {label: "Link",  name: "link",  widget: "string"},
-                      ]
-                    }
-                  ]
-                }
+                    {label: "Image", name: "image", widget: "image"},
+                    {label: "Link",  name: "link",  widget: "string"},
+                ]}
               ]
             }
           - {label: "Reccomendations", name: "reccomendations", widget: "list",

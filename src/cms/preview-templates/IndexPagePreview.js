@@ -10,10 +10,10 @@ const IndexPagePreview = ({ entry, getAsset }) => {
   if (data) {
     return (
       <IndexPageTemplate
-      blurb={data.blurb}
-      cards={data.cards}
-      intro={data.intro}
-      artists={data.artists}
+      blurb={getAsset(data.blurb)}
+      cards={getAsset(data.cards)}
+      intro={getAsset(data.intro)}
+      artists={getAsset(data.artists)}
       dividerImage={getAsset(data.dividerImage)}
       />
     )
