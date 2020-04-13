@@ -12,7 +12,7 @@ const Footer = styled.div`
   }
   .inner {
     max-width: 1200px;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     & > * + * {
       margin-top: 1.5rem;

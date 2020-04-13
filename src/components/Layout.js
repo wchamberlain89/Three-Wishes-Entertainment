@@ -10,12 +10,12 @@ export const theme = {
   maxWidth: "1400px",
   gradient: "linear-gradient(180deg, #66549A 0%, #846CCD 100%)",
   borderRadius: "10px",
-  spacing: ["0.75rem", "1rem", "1.5rem", "3rem", "5rem"], 
+  spacing: ["0.75rem", "1rem", "1.5rem", "3rem", "5rem", "7.5rem"], 
 }
 
 export const GlobalStyle = createGlobalStyle`
   html {
-  font-size: 16px;
+    font-size: 16px;
   }
 
   body {
@@ -43,9 +43,23 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1em;
   }
 
+  .bold {
+    font-weight: 700;
+  }
+
   .width-container {
     max-width: 1140px;
     margin: 0 auto;
+  }
+
+  .clear {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .center {
+    text-align: center;
   }
 `
 

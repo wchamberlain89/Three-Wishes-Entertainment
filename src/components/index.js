@@ -1,4 +1,5 @@
 import Accordion from './Accordion';
+import Artist from './Artist';
 import Button from './Button';
 import Card from './Card';
 import DecoratedTitle from './DecoratedTitle';
@@ -11,6 +12,7 @@ import Navbar from './Navbar';
 
 export {
   Accordion,
+  Artist,
   Button,
   Card,
   DecoratedTitle,

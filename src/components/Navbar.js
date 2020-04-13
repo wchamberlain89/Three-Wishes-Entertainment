@@ -15,9 +15,9 @@ const Logo = styled.h1`
 const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  padding: 1rem 1.5rem 0px;
+  padding: .75rem 1.5rem;
 
   .nav-links {
     a {

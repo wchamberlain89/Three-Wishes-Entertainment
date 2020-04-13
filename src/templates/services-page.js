@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components';
+import React, { useContext } from 'react'
+import styled, { ThemeContext } from 'styled-components';
 import { graphql } from 'gatsby'
 import {
   Button, 
@@ -47,9 +47,11 @@ const ServiceCardGrid = styled.div`
   margin-top: 5em;
 `
 
-const ServicesServiceCard = ({ title, description, image, inclusions, pricing, button }) => {
+const ServicesServiceCard = ({ title, description, image, inclusions, pricing, button }, ...props) => {
+  const themeContext = useContext(ThemeContext);
+  console.log(themeContext);
   return(
-    <Card>
+    <Card background={themeContext.gradient}>
       <img src={ image.childImageSharp ? image.childImageSharp.fluid.src : image }/>
       <h3 className="title">{title}</h3>
       <p>{description}</p>
@@ -60,7 +62,7 @@ const ServicesServiceCard = ({ title, description, image, inclusions, pricing, b
       <Button>Book Now</Button>
     </Card>
   )
-}
+};
 
 export const ServicesPageTemplate = ({
   title,
