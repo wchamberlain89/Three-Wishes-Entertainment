@@ -61,25 +61,21 @@ collections:
             }
           - {label: "Divider Image", name: "dividerImage", widget: "image"}
           - {label: "Artists",       name: "artists",      widget: "list", 
-              field: [
-                 {label: "Name",        name: "name",        widget: "string"},
-                 {label: "Image",       name: "image",       widget: "image"},
-                 {label: "Description", name: "description", widget: "string"},
-                 {label: "Social Link", name: "socialLink",  widget: "list", 
-                  fields: [
-                    {label: "Image", name: "image", widget: "image"},
-                    {label: "Link",  name: "link",  widget: "string"},
-                ]}
-              ]
-            }
+              fields: [
+                  {label: "Name",        name: "name",        widget: "string"},
+                  {label: "Image",       name: "image",       widget: "image"},
+                  {label: "Description", name: "description", widget: "string"},
+                  {label: "Social Link", name: "socialLink",  widget: "list", 
+                    fields: [
+                      {label: "Image", name: "image", widget: "image"},
+                      {label: "Link",  name: "link",  widget: "string"},
+                  ]}
+                ]
+              }
           - {label: "Reccomendations", name: "reccomendations", widget: "list",
               fields: [ 
-                {label: "Reccomendation", name: "reccomendation", widget: "object",
-                  fields: [
-                    {label: "Title", name: "title", widget: "string"},
-                    {label: "Text", name: "text", widget: "string"},
-                  ]
-                }
+                {label: "Title", name: "title", widget: "string"},
+                {label: "Text", name: "text", widget: "string"},
               ]
             }
       - file: "src/pages/services/index.md"
