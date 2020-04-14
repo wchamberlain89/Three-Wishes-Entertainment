@@ -28,7 +28,6 @@ export const PAGE_QUERY = graphql`
           pricing
           button {
             title
-            href
           }
         }
       }
@@ -68,6 +67,7 @@ export const ServicesPageTemplate = ({
   title,
   services
 }) => {
+  console.log("Services are", services)
   return (
     <Layout>
       <div className="width-container">  
