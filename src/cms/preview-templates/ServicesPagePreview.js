@@ -4,11 +4,16 @@ import { ServicesPageTemplate } from '../../templates/services-page'
 
 const ServicesPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS();
-  console.log(data.services)
+  
+  const services = data.services.map((service) => {
+    service.image = getAsset(service.image);
+    return service
+  });
+
   return (
     <ServicesPageTemplate
       title={data.title}
-      services={entry.getIn(['data', 'services'])}
+      services={services}
     />
   )
 }

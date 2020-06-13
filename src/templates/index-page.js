@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+
 import { 
   CarouselProvider, 
   Slider, 
@@ -86,10 +87,6 @@ export const INDEX_PAGE_QUERY = graphql`
   } 
 `
 
-export const LandingBlob = styled.img`
-  width: 300px;
-  height: 300px;
-`
 export const StyledDotGroup = styled(DotGroup)`
   display: flex;
   justify-content: center;

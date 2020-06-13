@@ -39,7 +39,7 @@ const ServiceCardGrid = styled.div`
   display: grid;
   max-width: 1300px;
   margin: 0 auto;
-  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   grid-gap: 2em;
   align-items: flex-start;
   justify-items: center;
@@ -48,16 +48,15 @@ const ServiceCardGrid = styled.div`
 
 const ServicesServiceCard = ({ title, description, image, inclusions, pricing, button }, ...props) => {
   const themeContext = useContext(ThemeContext);
-  console.log(themeContext);
   return(
     <Card background={themeContext.gradient}>
-      <img src={ image.childImageSharp ? image.childImageSharp.fluid.src : image }/>
+      <img src={ image.childImageSharp ? image.childImageSharp.fluid.src : image } style={{maxWidth: "100%"}}/>
       <h3 className="title">{title}</h3>
       <p>{description}</p>
-      <h3 className="title">What's Included</h3>
+      <h3 className="fs-xl">What's Included</h3>
       <p>{inclusions}</p>
       <h3 className="title">Pricing</h3>
-      <p>{pricing}</p>
+      <p className="fs-m">{pricing}</p>
       <Button>Book Now</Button>
     </Card>
   )
@@ -67,7 +66,7 @@ export const ServicesPageTemplate = ({
   title,
   services
 }) => {
-  console.log("Services are", services)
+  console.log(services)
   return (
     <Layout>
       <div className="width-container">  
@@ -82,9 +81,7 @@ export const ServicesPageTemplate = ({
 
 const ServicesPage = ({ data }) => {
   const frontmatter = data.markdownRemark.frontmatter
-
   return (
-    
       <ServicesPageTemplate
         title={frontmatter.title}
         services={frontmatter.services}
